@@ -1,0 +1,9 @@
+name: status check func
+on: push
+jobs:
+    fail:
+        runs-on: ubuntu-latest
+        steps:
+           - run: exit 1
+           - run: echo "Hello"
+             if: ${{failure()}}
